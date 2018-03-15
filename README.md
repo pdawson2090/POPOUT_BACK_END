@@ -16,4 +16,4 @@ Repo for development purposes
 
 
 ## Heroku
-- https://rp2-g5.herokuapp.com/
+- https://backend-rp2.herokuapp.com/
