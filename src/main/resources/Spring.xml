@@ -1,37 +1,37 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<beans xmlns="http://www.springframework.org/schema/beans"-->
+       <!--xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+       <!--xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">-->
 
 
-    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="org.postgresql.Driver" />
-        <property name="url" value="jdbc:postgresql://trainingdb.c5ftdbgckmgo.us-east-2.rds.amazonaws.com/trainingdb" />
-        <property name="username" value="maxqi" />
-        <property name="password" value="newtype1" />
-    </bean>
+    <!--<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
+        <!--<property name="driverClassName" value="org.postgresql.Driver" />-->
+        <!--<property name="url" value="jdbc:postgresql://trainingdb.c5ftdbgckmgo.us-east-2.rds.amazonaws.com/trainingdb" />-->
+        <!--<property name="username" value="maxqi" />-->
+        <!--<property name="password" value="newtype1" />-->
+    <!--</bean>-->
 
 
-    <!-- Hibernate 4 SessionFactory Bean definition -->
-    <bean id="hibernate4AnnotatedSessionFactory"
-          class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
-        <property name="dataSource" ref="dataSource" />
-        <property name="annotatedClasses">
-            <list>
-                <value>com.example.p2back.model.User</value>
-            </list>
-        </property>
-        <property name="hibernateProperties">
-            <props>
-                <prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQL9Dialect</prop>
-                <prop key="hibernate.current_session_context_class">thread</prop>
-                <prop key="hibernate.show_sql">false</prop>
-            </props>
-        </property>
-    </bean>
+    <!--&lt;!&ndash; Hibernate 4 SessionFactory Bean definition &ndash;&gt;-->
+    <!--<bean id="hibernate4AnnotatedSessionFactory"-->
+          <!--class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">-->
+        <!--<property name="dataSource" ref="dataSource" />-->
+        <!--<property name="annotatedClasses">-->
+            <!--<list>-->
+                <!--<value>popout.back.models.User</value>-->
+            <!--</list>-->
+        <!--</property>-->
+        <!--<property name="hibernateProperties">-->
+            <!--<props>-->
+                <!--<prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQL9Dialect</prop>-->
+                <!--<prop key="hibernate.current_session_context_class">thread</prop>-->
+                <!--<prop key="hibernate.show_sql">false</prop>-->
+            <!--</props>-->
+        <!--</property>-->
+    <!--</bean>-->
 
 
-    <bean id="userDao" class="com.example.p2back.dao.UserDaoJdbc">
-        <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
-    </bean>
-</beans>
+    <!--&lt;!&ndash;<bean id="userDao" class="com.example.p2back.dao.UserDaoJdbc">&ndash;&gt;-->
+        <!--&lt;!&ndash;<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />&ndash;&gt;-->
+    <!--&lt;!&ndash;</bean>&ndash;&gt;-->
+<!--</beans>-->
