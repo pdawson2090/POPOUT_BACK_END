@@ -19,14 +19,17 @@ public class FrontController
         //Retrieve User Values
         return user;
     }
+
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
     boolean processRegistration (@RequestBody User user){
         return true;
     }
+
     @RequestMapping(value = "/eventregistration", method = RequestMethod.POST)
     boolean processEventRegistration (@RequestBody Event event){
         return true;
     }
+
     @RequestMapping(value = "/eventRoster", method = RequestMethod.POST)
     List<Event> processEventRoster (){
         //Get List Of All Events
