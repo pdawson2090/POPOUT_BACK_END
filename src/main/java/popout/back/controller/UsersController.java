@@ -23,11 +23,6 @@ public class UsersController
     }
 
 
-    @RequestMapping("/")
-    public String homePage(){
-        return "Hello World";
-    }
-
     @PostMapping("/login")
     public Users processLogin (@RequestBody Users user){
         return repository.save(user);
