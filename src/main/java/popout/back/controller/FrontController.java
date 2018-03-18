@@ -1,25 +1,35 @@
 package popout.back.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import popout.back.Repo.UserRepository;
 import popout.back.models.Event;
-import popout.back.models.User;
+import popout.back.models.Users;
 //import popout.back.models.Event;
 //import popout.back.models.User;
 
 import java.util.List;
 
+
 @RestController
 public class FrontController
 {
 
-    @PostMapping("/login")
-    public boolean processLogin (@RequestBody User user){
-        System.out.println("username: " + user.getUsername());
-        System.out.println("password: " + user.getPassword());
-        return true;
+    private UserRepository repository;
+
+    @Autowired
+   public FrontController(UserRepository repository) {
+        this.repository = repository;
     }
+
+    @PostMapping("/login")
+    public Users processLogin (@RequestBody Users user){
+        return repository.save(user);
+
+    }
+
     @PostMapping("/register")
-    boolean processRegistration (@RequestBody User user){
+    boolean processRegistration (@RequestBody Users user){
         return true;
     }
     @PostMapping("/event")
@@ -28,7 +38,6 @@ public class FrontController
     }
     @PostMapping("/allevents")
     List<Event> processEventRoster (){
-        //Get List Of All Events
         return null;
     }
 

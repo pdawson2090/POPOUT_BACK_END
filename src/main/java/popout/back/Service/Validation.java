@@ -3,22 +3,21 @@ package popout.back.Services;
 
 import de.mkammerer.argon2.Argon2;
 import de.mkammerer.argon2.Argon2Factory;
-import popout.back.models.User;
+import popout.back.models.Users;
 
 public class Validation
 {
     private static Argon2 argon2 = Argon2Factory.create();
-    public void argon2Secure(User user){
+    public void argon2Secure(Users user){
 
         user.setPassword(argon2.hash(14,65336,1,user.getPassword()));
 
     }
-    public boolean loginValidation(String username, String pass)
+    public boolean loginValidation(Users user, String pass)
     {
-        User user = new User();
         try
         {
-            if (user.getUsername().equals(username))
+            if (true)
             {
 
                 // Verify password

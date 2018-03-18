@@ -8,70 +8,81 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>controller</name>
-    <description>PopOut Servlet layer backend</description>
+    <!--<name>controller</name>-->
+    <!--<description>PopOut Servlet layer backend</description>-->
 
 
     <parent>
-
         <groupId>org.springframework.boot</groupId>
-
         <artifactId>spring-boot-starter-parent</artifactId>
-
         <version>2.0.0.RELEASE</version>
-
         <relativePath/> <!-- lookup parent from repository -->
-
     </parent>
 
-
     <properties>
-
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
         <java.version>1.8</java.version>
-
     </properties>
 
-
     <dependencies>
-
         <dependency>
-
+            <groupId>de.mkammerer</groupId>
+            <artifactId>argon2-jvm</artifactId>
+            <version>2.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.2.2.jre7</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
-
             <artifactId>spring-boot-starter-web</artifactId>
-
         </dependency>
-
-
         <dependency>
-
             <groupId>org.springframework.boot</groupId>
-
             <artifactId>spring-boot-starter-test</artifactId>
-
             <scope>test</scope>
-
         </dependency>
 
-
-        <!--  allows conversion between Java objects and JSON data  -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>5.0.4.RELEASE</version>
+        </dependency>
 
         <dependency>
-
             <groupId>com.fasterxml.jackson.core</groupId>
-
             <artifactId>jackson-databind</artifactId>
+        </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
 
     </dependencies>
-
-
+    <repositories>
+        <repository>
+            <id>spring-releases</id>
+            <name>Spring Releases</name>
+            <url>https://repo.spring.io/libs-release</url>
+        </repository>
+        <repository>
+            <id>org.jboss.repository.releases</id>
+            <name>JBoss Maven Release Repository</name>
+            <url>https://repository.jboss.org/nexus/content/repositories/releases</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>spring-releases</id>
+            <name>Spring Releases</name>
+            <url>https://repo.spring.io/libs-release</url>
+        </pluginRepository>
+    </pluginRepositories>
     <build>
         <plugins>
             <plugin>
@@ -79,7 +90,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <mainClass>
-                        popout.back.controller.ControllerApplication
+                        popout.back.ControllerApplication
                     </mainClass>
                 </configuration>
             </plugin>
