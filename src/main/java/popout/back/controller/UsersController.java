@@ -23,7 +23,7 @@ public class UsersController
     }
 
 
-    @GetMapping("/")
+    @RequestMapping("/")
     public String homePage(){
         return "Hello World";
     }
