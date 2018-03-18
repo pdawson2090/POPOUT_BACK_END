@@ -1,30 +1,44 @@
 package popout.back.models;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+@Entity
 public class Event
 {
-    private int event_id;
-    private String event_title;
-    private String event_description;
-    private String event_date;
-    private String event_time;
-    private double latitude;
-    private double longitude;
-
-
     @Id
-    @Column(name = "event_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public int getEvent_id()
+    private long id;
+    @Column(name = "event_title")
+    private String event_title;
+    @Column(name = "event_description")
+    private String event_description;
+    @Column(name = "event_date")
+    private String event_date;
+    @Column(name = "event_time")
+    private String event_time;
+    @Column(name = "lat")
+    private double latitude;
+    @Column(name = "long")
+    private double longitude;
+    @Column(name = "event_address")
+    private String event_address;
+
+    public String getEvent_address()
     {
-        return this.event_id;
+        return event_address;
     }
 
-    @Column(name = "event_title")
+    public void setEvent_address(String event_address)
+    {
+        this.event_address = event_address;
+    }
+
+    public long getId()
+    {
+        return this.id;
+    }
+
+
     public void setEvent_title(String newTitle)
     {
         this.event_title = newTitle;
@@ -35,7 +49,6 @@ public class Event
         return this.event_title;
     }
 
-    @Column(name = "event_description")
     public void setEvent_description(String newDesc)
     {
         this.event_description = newDesc;
@@ -46,7 +59,6 @@ public class Event
         return this.event_description;
     }
 
-    @Column(name = "event_date")
     public void setEvent_date(String newDate)
     {
         this.event_date = newDate;
@@ -57,7 +69,7 @@ public class Event
         return this.event_date;
     }
 
-    @Column(name = "event_time")
+
     public void setEvent_time(String newTime)
     {
         this.event_time = newTime;
@@ -68,7 +80,7 @@ public class Event
         return this.event_time;
     }
 
-    @Column(name = "lat")
+
     public void setLatitude(double newLat)
     {
         this.latitude = newLat;
@@ -79,7 +91,6 @@ public class Event
         return this.latitude;
     }
 
-    @Column(name = "long")
     public void setLongitude(double newLong)
     {
         this.longitude = newLong;

@@ -12,14 +12,20 @@ import java.util.List;
 
 
 @RestController
-public class FrontController
+public class UsersController
 {
 
     private UserRepository repository;
 
     @Autowired
-   public FrontController(UserRepository repository) {
+   public UsersController(UserRepository repository) {
         this.repository = repository;
+    }
+
+
+    @GetMapping("/")
+    public String homePage(){
+        return "Hello World";
     }
 
     @PostMapping("/login")
