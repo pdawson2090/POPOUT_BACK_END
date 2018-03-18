@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="00dcbcc9-bf4a-4f42-925b-41d7e20a2b75" name="Default" comment="" />
+    <list default="true" id="00dcbcc9-bf4a-4f42-925b-41d7e20a2b75" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -13,7 +15,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UsersController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UsersController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/popout/back/controller/UsersController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="380">
@@ -56,6 +58,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="463">
               <caret line="111" column="39" lean-forward="false" selection-start-line="111" selection-start-column="39" selection-end-line="111" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.properties" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -160,7 +172,6 @@
         <option value="$PROJECT_DIR$/controller.iml" />
         <option value="$PROJECT_DIR$/src/main/java/popout/back/controller/ControllerApplication.java" />
         <option value="$PROJECT_DIR$/src/main/java/popout/back/front_controller/FrontController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/popout/back/dao/UserDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/popout/back/dao/UserDaoJdbc.java" />
         <option value="$PROJECT_DIR$/src/main/java/popout/back/Services/Validation.java" />
@@ -178,6 +189,7 @@
         <option value="$PROJECT_DIR$/src/main/java/popout/back/controller/EventController.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/popout/back/controller/UsersController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
       </list>
     </option>
   </component>
@@ -468,12 +480,12 @@
       <workItem from="1521339622287" duration="60000" />
       <workItem from="1521339760147" duration="999000" />
       <workItem from="1521340794240" duration="19857000" />
-      <workItem from="1521404176648" duration="1982000" />
+      <workItem from="1521404176648" duration="2245000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37084000" />
+    <option name="totallyTimeSpent" value="37347000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="34" y="0" width="927" height="1049" extended-state="0" />
@@ -868,14 +880,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/popout/back/dao/UserDao.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/popout/back/dao/UserDaoJdbc.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="41" lean-forward="false" selection-start-line="0" selection-start-column="41" selection-end-line="0" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/Spring.xml" />
     <entry file="file://$PROJECT_DIR$/src/main/java/popout/back/controller/ApplicationConfig.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/popout/back/ControllerApplication.java">
@@ -977,6 +981,14 @@
             <element signature="e#984#985#0" expanded="true" />
             <element signature="e#1011#1012#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
