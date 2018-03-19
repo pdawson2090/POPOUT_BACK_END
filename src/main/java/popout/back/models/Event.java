@@ -17,9 +17,9 @@ public class Event
     @Column(name = "event_time")
     private String event_time;
     @Column(name = "lat")
-    private double latitude;
+    private double lat;
     @Column(name = "long")
-    private double longitude;
+    private double lng;
 
     @Override
     public String toString()
@@ -30,8 +30,8 @@ public class Event
                 ", event_description='" + event_description + '\'' +
                 ", event_date='" + event_date + '\'' +
                 ", event_time='" + event_time + '\'' +
-                ", latitude=" + latitude +
-                ", longitude=" + longitude +
+                ", latitude=" + lat +
+                ", longitude=" + lng +
                 ", event_address='" + event_address + '\'' +
                 '}';
     }
@@ -42,8 +42,8 @@ public class Event
         this.event_description = event_description;
         this.event_date = event_date;
         this.event_time = event_time;
-        this.latitude = latitude;
-        this.longitude = longitude;
+        this.lat = latitude;
+        this.lng = longitude;
         this.event_address = event_address;
     }
 
@@ -112,21 +112,21 @@ public class Event
 
     public void setLatitude(double newLat)
     {
-        this.latitude = newLat;
+        this.lat = newLat;
     }
 
     public double getLatitude()
     {
-        return this.latitude;
+        return this.lat;
     }
 
     public void setLongitude(double newLong)
     {
-        this.longitude = newLong;
+        this.lng = newLong;
     }
 
     public double getLongitude()
     {
-        return this.longitude;
+        return this.lng;
     }
 }

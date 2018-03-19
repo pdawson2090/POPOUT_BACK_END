@@ -29,15 +29,15 @@ public class UserService
     }
 
     public boolean login(Users user){
-        List<Users> temp = repository.findUsersByUsername(user.getUsername());
-        System.out.println(temp.get(0).getFirst_name());
+        Users temp = repository.findUsersByUsername(user.getUsername());
+        System.out.println(temp.getFirst_name());
         try
         {
-            if (temp.get(0).getUsername() != null)
+            if (temp.getUsername() != null)
             {
 
                 // Verify password
-                if (argon2.verify(temp.get(0).getPassword(), user.getPassword()))
+                if (argon2.verify(temp.getPassword(), user.getPassword()))
                 {
                     System.out.println("Login Success!");
                     return true;
@@ -60,5 +60,9 @@ public class UserService
         }
 
         return false;
+    }
+
+    public Users getUser(String username){
+        return repository.findUsersByUsername(username);
     }
 }

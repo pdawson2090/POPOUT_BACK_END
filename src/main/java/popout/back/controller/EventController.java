@@ -25,7 +25,7 @@ public class EventController
     public void addEvent(@RequestBody Event event){
          repository.save(event);
     }
-    @PostMapping("/allEvents")
+    @GetMapping("/allEvents")
     public List<Event> getAllEvents(){
         return repository.findAll();
     }
