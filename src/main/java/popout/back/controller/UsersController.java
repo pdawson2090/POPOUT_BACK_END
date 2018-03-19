@@ -3,6 +3,7 @@ package popout.back.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import popout.back.Repo.UserRepository;
+import popout.back.Service.UserService;
 import popout.back.models.Event;
 import popout.back.models.Users;
 //import popout.back.models.Event;
@@ -15,32 +16,26 @@ import java.util.List;
 public class UsersController
 {
 
-    private UserRepository repository;
+    private UserService repository;
 
     @Autowired
-   public UsersController(UserRepository repository) {
+   public UsersController(UserService repository) {
         this.repository = repository;
     }
 
 
     @PostMapping("/login")
-    public Users processLogin (@RequestBody Users user){
-        return repository.save(user);
+    public boolean processLogin (@RequestBody Users user){
+        return repository.login(user);
 
     }
 
     @PostMapping("/register")
     boolean processRegistration (@RequestBody Users user){
+        repository.save(user);
         return true;
     }
-    @PostMapping("/event")
-    boolean processEventRegistration (@RequestBody Event event){
-        return true;
-    }
-    @PostMapping("/allevents")
-    List<Event> processEventRoster (){
-        return null;
-    }
+
 
 
 

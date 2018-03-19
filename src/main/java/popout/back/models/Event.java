@@ -20,9 +20,38 @@ public class Event
     private double latitude;
     @Column(name = "long")
     private double longitude;
+
+    @Override
+    public String toString()
+    {
+        return "Event{" +
+                "id=" + id +
+                ", event_title='" + event_title + '\'' +
+                ", event_description='" + event_description + '\'' +
+                ", event_date='" + event_date + '\'' +
+                ", event_time='" + event_time + '\'' +
+                ", latitude=" + latitude +
+                ", longitude=" + longitude +
+                ", event_address='" + event_address + '\'' +
+                '}';
+    }
+
+    public Event(String event_title, String event_description, String event_date, String event_time, double latitude, double longitude, String event_address)
+    {
+        this.event_title = event_title;
+        this.event_description = event_description;
+        this.event_date = event_date;
+        this.event_time = event_time;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.event_address = event_address;
+    }
+
     @Column(name = "event_address")
+
     private String event_address;
 
+    protected Event(){};
     public String getEvent_address()
     {
         return event_address;
