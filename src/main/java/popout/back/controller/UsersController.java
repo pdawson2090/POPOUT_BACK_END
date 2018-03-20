@@ -34,12 +34,14 @@ public class UsersController
             return null;
         }
     }
+    
     @PostMapping("/register")
     boolean processRegistration(@RequestBody Users user)
     {
         repository.save(user);
         return true;
     }
+    @PostMapping("/allVisitors")
     public List<Users> getEventAttendents(Long id){
         return repository.findAllByEvent(id);
     }
