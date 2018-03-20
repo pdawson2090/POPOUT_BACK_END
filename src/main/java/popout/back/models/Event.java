@@ -18,6 +18,18 @@ public class Event
     private String event_time;
     @Column(name = "event_address")
     private String event_address;
+    @Column(name = "event_host")
+    private Long event_host;
+
+    public Long getEvent_host()
+    {
+        return event_host;
+    }
+
+    public void setEvent_host(Long event_host)
+    {
+        this.event_host = event_host;
+    }
 
     public String getEvent_type()
     {

@@ -8,6 +8,6 @@ import popout.back.models.FriendIdentity;
 import java.util.List;
 
 @Repository
-public interface FriendRepository extends JpaRepository<Friend, FriendIdentity>{
-    List<Friend> findByFriendIdentity_FriendAOrFriendIdentity_FriendB(long userId);
+public interface FriendRepository extends JpaRepository<Friend, Long>{
+    List<Friend> findByFriendIdentity_FriendAOrFriendIdentity_FriendB(Long x, Long y);
 }

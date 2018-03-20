@@ -16,7 +16,6 @@ import java.util.List;
 @RestController
 public class UsersController
 {
-
     private UserService repository;
 
     @Autowired
@@ -24,7 +23,6 @@ public class UsersController
     {
         this.repository = repository;
     }
-
 
     @PostMapping("/login")
     public Users processLogin(@RequestBody Users user)
@@ -35,17 +33,16 @@ public class UsersController
         }else{
             return null;
         }
-
-
     }
-
     @PostMapping("/register")
     boolean processRegistration(@RequestBody Users user)
     {
         repository.save(user);
         return true;
     }
-
+    public List<Users> getEventAttendents(Long id){
+        return repository.findAllByEvent(id);
+    }
     @PostMapping("/allUsers")
     List<Users> processUserList(){
         return repository.getAllUsers();

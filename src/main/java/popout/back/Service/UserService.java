@@ -6,9 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import popout.back.Repo.AttendentRepository;
 import popout.back.Repo.UserRepository;
+import popout.back.models.Attendent;
 import popout.back.models.Users;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -18,8 +21,12 @@ public class UserService
 
     private UserRepository repository;
 
+    AttendentRepository Arepository;
+
+
     @Autowired
-    public UserService(UserRepository repository) {
+    public UserService(UserRepository repository,AttendentRepository Arepository) {
+        this.Arepository = Arepository;
         this.repository = repository;
     }
 
@@ -69,4 +76,13 @@ public class UserService
     public List<Users> getAllUsers(){
         return repository.findAll();
     }
+
+    public List<Users> findAllByEvent( long id){
+        List<Users>temp = new ArrayList<>();
+        for(Attendent a: Arepository.findAttendentByAttendentIdentity_EventId(id)){
+            temp.add(repository.findUsersById(a.getFriendIdentity().getUserId()));
+        }
+        return temp;
+    }
+
 }
