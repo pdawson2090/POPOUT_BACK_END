@@ -47,7 +47,8 @@ public class Event
                 ", event_time='" + event_time + '\'' +
                 ", latitude=" + lat +
                 ", longitude=" + lng +
-                ", event_address='" + event_address + '\'' +
+                ", event_address='" + event_address + '\''+
+                 ", event_type='" + event_type + '\'' +
                 '}';
     }
 
