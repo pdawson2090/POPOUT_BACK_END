@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 import popout.back.Service.UserService;
 import popout.back.models.Users;
 
+import java.util.List;
+
 //import popout.back.models.Event;
 //import popout.back.models.User;
 
@@ -42,6 +44,11 @@ public class UsersController
     {
         repository.save(user);
         return true;
+    }
+
+    @PostMapping("/allUsers")
+    List<Users> processUserList(){
+        return repository.getAllUsers();
     }
 
 

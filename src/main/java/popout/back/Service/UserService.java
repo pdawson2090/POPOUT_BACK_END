@@ -65,4 +65,8 @@ public class UserService
     public Users getUser(String username){
         return repository.findUsersByUsername(username);
     }
+
+    public List<Users> getAllUsers(){
+        return repository.findAll();
+    }
 }
