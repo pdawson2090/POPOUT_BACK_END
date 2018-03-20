@@ -16,6 +16,21 @@ public class Event
     private String event_date;
     @Column(name = "event_time")
     private String event_time;
+    @Column(name = "event_address")
+    private String event_address;
+
+    public String getEvent_type()
+    {
+        return event_type;
+    }
+
+    public void setEvent_type(String event_type)
+    {
+        this.event_type = event_type;
+    }
+
+    @Column(name = "event_type")
+    private String event_type;
     @Column(name = "lat")
     private double lat;
     @Column(name = "long")
@@ -36,20 +51,20 @@ public class Event
                 '}';
     }
 
-    public Event(String event_title, String event_description, String event_date, String event_time, double latitude, double longitude, String event_address)
+    public Event(String event_title,String event_type, String event_description, String event_date, String event_time, double latitude, double longitude, String event_address)
     {
         this.event_title = event_title;
         this.event_description = event_description;
         this.event_date = event_date;
         this.event_time = event_time;
+        this.event_address = event_address;
+        this.event_type = event_type;
         this.lat = latitude;
         this.lng = longitude;
-        this.event_address = event_address;
+
     }
 
-    @Column(name = "event_address")
 
-    private String event_address;
 
     protected Event(){};
     public String getEvent_address()
