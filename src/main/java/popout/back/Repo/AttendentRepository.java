@@ -12,4 +12,5 @@ import java.util.List;
 public interface AttendentRepository extends JpaRepository<Attendent,AttendentIdentity>
 {
     List<Attendent> findAttendentByAttendentIdentity_EventId(Long event);
+
 }

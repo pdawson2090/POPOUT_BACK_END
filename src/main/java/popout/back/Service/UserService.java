@@ -4,11 +4,9 @@ import de.mkammerer.argon2.Argon2;
 import de.mkammerer.argon2.Argon2Factory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import popout.back.Repo.AttendentRepository;
 import popout.back.Repo.UserRepository;
-import popout.back.models.Attendent;
 import popout.back.models.Users;
 
 import java.util.ArrayList;
@@ -25,17 +23,20 @@ public class UserService
 
 
     @Autowired
-    public UserService(UserRepository repository,AttendentRepository Arepository) {
+    public UserService(UserRepository repository, AttendentRepository Arepository)
+    {
         this.Arepository = Arepository;
         this.repository = repository;
     }
 
-    public Users save (@RequestBody Users user){
-        user.setPassword(argon2.hash(14,65336,1,user.getPassword()));
+    public Users save(@RequestBody Users user)
+    {
+        user.setPassword(argon2.hash(14, 65336, 1, user.getPassword()));
         return repository.save(user);
     }
 
-    public boolean login(Users user){
+    public boolean login(Users user)
+    {
         Users temp = repository.findUsersByUsername(user.getUsername());
         System.out.println(temp.getFirst_name());
         try
@@ -69,18 +70,22 @@ public class UserService
         return false;
     }
 
-    public Users getUser(String username){
+    public Users getUser(String username)
+    {
         return repository.findUsersByUsername(username);
     }
 
-    public List<Users> getAllUsers(){
+    public List<Users> getAllUsers()
+    {
         return repository.findAll();
     }
 
-    public List<Users> findAllByEvent( long id){
-        List<Users>temp = new ArrayList<>();
-        for(Attendent a: Arepository.findAttendentByAttendentIdentity_EventId(id)){
-            temp.add(repository.findUsersById(a.getFriendIdentity().getUserId()));
+    public List<Users> findAllByEvent(List<Long> id)
+    {
+        List<Users> temp = new ArrayList<>();
+        for (Long a : id)
+        {
+            temp.add(repository.findUsersById(a));
         }
         return temp;
     }

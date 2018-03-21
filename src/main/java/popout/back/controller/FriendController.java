@@ -10,6 +10,7 @@ import popout.back.Repo.FriendRepository;
 import popout.back.Service.FriendService;
 import popout.back.models.Friend;
 import popout.back.models.FriendIdentity;
+import popout.back.models.Users;
 
 import java.util.List;
 
@@ -24,7 +25,7 @@ public class FriendController {
     }
 
     @GetMapping("/getFriends")
-    public List<Long> findByFriends(@Param("id") Long id){
+    public List<Users> findByFriends(@Param("id") Long id){
         return friendRepository.friendList((Long) id);
     }
     @GetMapping("/newFriend")

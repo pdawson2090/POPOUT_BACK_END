@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import popout.back.Repo.AttendentRepository;
 import popout.back.Repo.EventRepository;
 import popout.back.models.Event;
 
@@ -16,14 +17,17 @@ import java.util.List;
 public class EventController
 {
     private EventRepository repository;
+    private AttendentRepository repo;
 
     @Autowired
-    public EventController(EventRepository repository) {
+    public EventController(EventRepository repository, AttendentRepository repo) {
         this.repository = repository;
+        this.repo = repo;
     }
     @PostMapping("/newEvent")
     public void addEvent(@RequestBody Event event){
          repository.save(event);
+//         repo.save();
     }
     @GetMapping("/allEvents")
     public List<Event> getAllEvents(){

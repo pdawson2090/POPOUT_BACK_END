@@ -2,10 +2,11 @@ package popout.back.models;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import java.io.Serializable;
 import java.util.Objects;
 
 @Embeddable
-public class AttendentIdentity
+public class AttendentIdentity implements Serializable
 {
     @Column(name= "event_id")
     private long eventId;
