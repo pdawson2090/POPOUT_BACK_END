@@ -1,6 +1,8 @@
 package popout.back.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,7 +32,8 @@ public class UsersController
         if (repository.login(user))
         {
             return repository.getUser(user.getUsername());
-        }else{
+        } else
+        {
             return null;
         }
     }
@@ -44,9 +47,13 @@ public class UsersController
 
 
     @PostMapping("/allUsers")
-    List<Users> processUserList(){
+    List<Users> processUserList()
+    {
         return repository.getAllUsers();
     }
 
-
+    @GetMapping("/name")
+    Users getUserByUsername(@Param("username") String username){
+        return repository.getUser(username);
+    }
 }

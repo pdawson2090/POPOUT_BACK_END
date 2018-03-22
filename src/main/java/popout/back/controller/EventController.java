@@ -25,8 +25,9 @@ public class EventController
         this.repo = repo;
     }
     @PostMapping("/newEvent")
-    public void addEvent(@RequestBody Event event){
+    public boolean addEvent(@RequestBody Event event){
          repository.save(event);
+         return true;
 //         repo.save();
     }
     @GetMapping("/allEvents")
