@@ -2,6 +2,7 @@ package popout.back.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import popout.back.Repo.AttendentRepository;
@@ -26,5 +27,10 @@ public class AttendentController
     @PostMapping("/allVisitors")
     public List<Users> getEventAttendents(Long id){
         return attendentService.getEventAttendents(id);
+    }
+    
+    @GetMapping("/attendEvent")
+    public void addAttendent(Long user_id, Long event_id){
+        attendentService.newAttendent(event_id,user_id);
     }
 }

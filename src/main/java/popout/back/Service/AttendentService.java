@@ -3,7 +3,6 @@ package popout.back.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import popout.back.Repo.AttendentRepository;
-import popout.back.Repo.UserRepository;
 import popout.back.models.Attendent;
 import popout.back.models.AttendentIdentity;
 import popout.back.models.Users;
@@ -30,9 +29,18 @@ public class AttendentService
     {
 
         List<Attendent> eventAttendents = repository.findAttendentByAttendentIdentity_EventId(id);
-        for(Attendent a : eventAttendents){
+        for (Attendent a : eventAttendents)
+        {
             temp.add(a.getFriendIdentity().getUserId());
         }
         return userService.findAllByEvent(temp);
+    }
+    public boolean newAttendent(long eventId, long userId){
+        AttendentIdentity temp = new AttendentIdentity();
+        temp.setEventId(eventId);
+        temp.setUserId(userId);
+        Attendent a = new Attendent(temp);
+        repository.save(a);
+        return true;
     }
 }

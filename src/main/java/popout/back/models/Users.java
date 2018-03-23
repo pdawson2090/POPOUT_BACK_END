@@ -1,6 +1,9 @@
 package popout.back.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
 
 @Entity
@@ -13,6 +16,7 @@ public class Users
     @Column(name = "username")
     private String username;
     @Column(name = "password")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
     @Column(name = "first_name")
     private String first_name;
