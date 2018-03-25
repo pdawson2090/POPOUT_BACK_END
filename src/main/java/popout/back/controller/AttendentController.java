@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import popout.back.Repo.AttendentRepository;
 import popout.back.Repo.EventRepository;
@@ -31,7 +32,7 @@ public class AttendentController
     }
 
     @GetMapping("/attendEvent")
-    public void addAttendent(@Param("id")Long user_id, @Param("id2")Long event_id){
-        attendentService.newAttendent(event_id,user_id);
+    public void addAttendent(@RequestParam("id")Long user_id, @RequestParam("id2")Long event_id){
+        attendentService.newAttendent(user_id,event_id);
     }
 }

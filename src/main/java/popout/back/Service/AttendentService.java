@@ -38,10 +38,10 @@ public class AttendentService
         return userService.findAllByEvent(temp);
     }
     public boolean newAttendent(long eventId, long userId){
-        AttendentIdentity temp = new AttendentIdentity();
-        temp.setEventId(eventId);
-        temp.setUserId(userId);
-        Attendent a = new Attendent(temp);
+        AttendentIdentity temp2 = new AttendentIdentity();
+        temp2.setEventId(eventId);
+        temp2.setUserId(userId);
+        Attendent a = new Attendent(temp2);
         repository.save(a);
         return true;
     }
