@@ -86,6 +86,7 @@ public class UserService
         for (Long a : id)
         {
             temp.add(repository.findUsersById(a));
+
         }
         return temp;
     }

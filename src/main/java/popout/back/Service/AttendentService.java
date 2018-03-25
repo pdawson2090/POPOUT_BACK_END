@@ -20,15 +20,17 @@ public class AttendentService
 
 
     @Autowired
-    public AttendentService(AttendentRepository repository)
+    public AttendentService(AttendentRepository repository, UserService userService)
     {
         this.repository = repository;
+        this.userService = userService;
     }
 
     public List<Users> getEventAttendents(long id)
     {
+        temp = new ArrayList<>();
 
-        List<Attendent> eventAttendents = repository.findAttendentByAttendentIdentity_EventId(id);
+        List<Attendent> eventAttendents  = repository.findAttendentByAttendentIdentity_EventId(id);
         for (Attendent a : eventAttendents)
         {
             temp.add(a.getFriendIdentity().getUserId());
