@@ -36,6 +36,6 @@ public class EventController
     }
     @GetMapping("/event")
     public Event getEventById(@Param("id") long id){
-        return repository.getOne(id);
+        return repository.findEventById((Long)id);
     }
 }

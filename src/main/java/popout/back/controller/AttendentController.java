@@ -28,7 +28,7 @@ public class AttendentController
     public List<Users> getEventAttendents(Long id){
         return attendentService.getEventAttendents(id);
     }
-    
+
     @GetMapping("/attendEvent")
     public void addAttendent(Long user_id, Long event_id){
         attendentService.newAttendent(event_id,user_id);
