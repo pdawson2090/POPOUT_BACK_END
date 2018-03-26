@@ -43,4 +43,8 @@ public class FriendService
         Friend friend = new Friend(f);
         repository.save(friend);
     }
+
+    public void deleteFriend(FriendIdentity f){
+        repository.deleteByFriendIdentity(f);
+    }
 }

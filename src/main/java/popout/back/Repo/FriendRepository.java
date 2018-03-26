@@ -10,4 +10,6 @@ import java.util.List;
 @Repository
 public interface FriendRepository extends JpaRepository<Friend, Long>{
     List<Friend> findByFriendIdentity_FriendAOrFriendIdentity_FriendB(Long x, Long y);
+
+    void deleteByFriendIdentity(FriendIdentity identity);
 }
