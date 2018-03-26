@@ -40,7 +40,7 @@ public class FriendController {
         //friendRepository.save(friend);
     }
 
-    @Transactional
+
     @DeleteMapping("/deleteFriend")
     public void deleteFriend(@RequestParam Long friendA, @RequestParam Long friendB){
         if(friendA < friendB){
