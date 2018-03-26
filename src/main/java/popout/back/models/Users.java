@@ -27,6 +27,14 @@ public class Users
     @Column(name = "email")
     private String email;
 
+    @Column(name= "birthday")
+    private String birthday;
+    @Column(name= "favorite_food")
+    private String favorite_food;
+    @Column(name= "description")
+    private String description;
+
+
     public long getId()
     {
         return id;
@@ -97,7 +105,31 @@ public class Users
         this.email = email;
     }
 
-    public Users(String username, String password, String first_name, String last_name, String favorite_type, String email)
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
+    }
+
+    public String getFavorite_food() {
+        return favorite_food;
+    }
+
+    public void setFavorite_food(String favorite_food) {
+        this.favorite_food = favorite_food;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Users(String username, String password, String first_name, String last_name, String favorite_type, String email, String birthday, String favorite_food, String description)
     {
         this.username = username;
         this.password = password;
@@ -105,7 +137,9 @@ public class Users
         this.last_name = last_name;
         this.favorite_type = favorite_type;
         this.email = email;
-
+        this.birthday = birthday;
+        this.favorite_food = favorite_food;
+        this.description = description;
     }
 
     @Override

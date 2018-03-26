@@ -2,10 +2,7 @@ package popout.back.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import popout.back.Service.UserService;
 import popout.back.models.Users;
 
@@ -55,5 +52,10 @@ public class UsersController
     @GetMapping("/name")
     Users getUserByUsername(@Param("username") String username){
         return repository.getUser(username);
+    }
+
+    @PutMapping("/updateUser")
+    boolean updateUser(@RequestBody Users user){
+        return true;
     }
 }
