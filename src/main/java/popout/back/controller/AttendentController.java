@@ -32,7 +32,7 @@ public class AttendentController
     }
 
     @GetMapping("/attendEvent")
-    public void addAttendent(@RequestParam("id")Long user_id, @RequestParam("id2")Long event_id){
+    public void addAttendent(@RequestParam("user_id")Long user_id, @RequestParam("event_id")Long event_id){
         attendentService.newAttendent(user_id,event_id);
     }
 }
