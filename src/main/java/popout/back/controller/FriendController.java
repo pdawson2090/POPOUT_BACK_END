@@ -26,6 +26,7 @@ public class FriendController {
         return friendRepository.friendList((Long) id);
     }
 
+    @Transactional
     @GetMapping("/newFriend")
     public void addFriend(@RequestParam Long friendA, @RequestParam Long friendB){
         //making sure that friendA's ID is less than friendB's ID.
