@@ -91,4 +91,8 @@ public class UserService
         return temp;
     }
 
+    public void updateUser(Users user){
+        repository.updateUserInfo(user.getFavorite_type(), user.getFavorite_food(), user.getDescription(), user.getId());
+    }
+
 }
