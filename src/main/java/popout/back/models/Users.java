@@ -9,7 +9,6 @@ import javax.persistence.*;
 @Entity
 public class Users
 {
-
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private long id;
@@ -143,9 +142,8 @@ public class Users
     }
 
     @Override
-    public String toString()
-    {
-        return "User{" +
+    public String toString() {
+        return "Users{" +
                 "id=" + id +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
@@ -153,6 +151,9 @@ public class Users
                 ", last_name='" + last_name + '\'' +
                 ", favorite_type='" + favorite_type + '\'' +
                 ", email='" + email + '\'' +
+                ", birthday='" + birthday + '\'' +
+                ", favorite_food='" + favorite_food + '\'' +
+                ", description='" + description + '\'' +
                 '}';
     }
 

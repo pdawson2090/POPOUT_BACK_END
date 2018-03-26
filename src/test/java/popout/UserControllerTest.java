@@ -1,3 +1,5 @@
+package popout;
+
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -84,6 +86,27 @@ public class UserControllerTest {
                         "        \"description\": \"test2\"\n" +
                         "    }")
                 .accept(MediaType.APPLICATION_JSON))
+                .andDo(print());
+    }
+
+    @Test
+    public void verifyUpdateUser() throws Exception{
+        mockMvc.perform(MockMvcRequestBuilders.put("/updateUser")
+        .contentType(MediaType.APPLICATION_JSON)
+                .content("    {\n" +
+                        "        \"id\": 24,\n" +
+                        "        \"username\": \"test2\",\n" +
+                        "        \"password\": \"test2\",\n" +
+                        "        \"first_name\": \"TEST2\",\n" +
+                        "        \"last_name\": \"TEST2\",\n" +
+                        "        \"favorite_type\": \"test2changed\",\n" +
+                        "        \"email\": \"test2@test.com\"\n" +
+                        "        \"birthday\": \"11/11/1111\"\n" +
+                        "        \"favorite_food\": \"test2changed\"\n" +
+                        "        \"description\": \"test2changed\"\n" +
+                        "    }")
+                .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
                 .andDo(print());
     }
 }

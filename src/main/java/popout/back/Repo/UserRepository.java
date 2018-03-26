@@ -4,6 +4,7 @@ import org.springframework.data.domain.Example;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.transaction.annotation.Transactional;
 import popout.back.models.Users;
 
 import java.util.List;
@@ -14,7 +15,8 @@ public interface UserRepository extends JpaRepository<Users, Long> {
     Users findUsersByUsername(String Username);
     Users findUsersById(Long id);
 
-//    @Modifying(clearAutomatically = true)
-//    @Query("UPDATE Users c SET c.birthday = :birthday, c.favorite_food = :favorite_food, c.description = :description WHERE c.id = :userId")
-//    boolean update
+    @Transactional
+    @Modifying
+    @Query("update Users c set c.favorite_type = ?1, c.favorite_food = ?2, c.description = ?3 where c.id = ?4")
+    void updateUserInfo(String favoriteType, String favoriteFood, String description, Long id);
 }

@@ -56,6 +56,7 @@ public class UsersController
 
     @PutMapping("/updateUser")
     boolean updateUser(@RequestBody Users user){
+        repository.updateUser(user);
         return true;
     }
 }
